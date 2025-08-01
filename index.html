@@ -113,17 +113,21 @@
   </style>
 </head>
 <body>
-
+<script>
+  if (Telegram?.WebApp) {
+    Telegram.WebApp.ready();
+    Telegram.WebApp.expand();
+    Telegram.WebApp.MainButton.setText("Работает!");
+  } else {
+    alert("❌ Telegram.WebApp не доступен");
+  }
+</script>
   <header>
     <h1>Savage Seven</h1>
     <p class="tagline">Клан-теги: <strong>seven</strong>, <strong>SvgSN</strong></p>
     <p>Добро пожаловать на сайт клана </p>
   </header>
 
-  <script>
-    Telegram.WebApp.ready();
-    Telegram.WebApp.expand();  
-  </script>
   <section>
     <h2>🚪 Вступление в клан</h2>
     <div class="rank-info">
