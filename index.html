@@ -113,15 +113,7 @@
   </style>
 </head>
 <body>
-<script>
-  if (Telegram?.WebApp) {
-    Telegram.WebApp.ready();
-    Telegram.WebApp.expand();
-    Telegram.WebApp.MainButton.setText("Работает!");
-  } else {
-    alert("❌ Telegram.WebApp не доступен");
-  }
-</script>
+
   <header>
     <h1>Savage Seven</h1>
     <p class="tagline">Клан-теги: <strong>seven</strong>, <strong>SvgSN</strong></p>
@@ -243,6 +235,16 @@
   <footer>
     © 2025 Savage Seven. Все права защищены.
   </footer>
+<script>
+  if (window.Telegram && Telegram.WebApp) {
+    Telegram.WebApp.ready();
+    Telegram.WebApp.expand();
 
+    Telegram.WebApp.MainButton.setText("Работает!");
+    Telegram.WebApp.MainButton.show();
+  } else {
+    console.warn("❌ Telegram WebApp API не доступен");
+  }
+</script>
 </body>
 </html>
